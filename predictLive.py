@@ -5,6 +5,7 @@ from keras.preprocessing import image
 import cv2
 from threading import Thread, Timer
 from config import *
+import time
 
 im = Segmentation()
 loaded_model = load_model('UNET20.h5')
@@ -21,6 +22,7 @@ def predict_class(model, image):
 
 while 1:
     ret, frame2 = cap.read()
+    start_time = time.time() # start time of the loop
     frame = cv2.resize(frame2, (WIDTH, HEIGHT))
     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     prediction = predict_class(loaded_model, frame)
@@ -33,8 +35,6 @@ while 1:
             class_num = class_num[0]
             segmentation_map[i,j] = Cityscapes_Colors[class_num]
 
-
-
     frame = cv2.resize(frame, (480, 360))
     out = cv2.resize(out, (480,360))
     # segmentation_map = th.segmentation_map
@@ -43,6 +43,7 @@ while 1:
     # cv2.imshow('src', frame)
     cv2.imshow('map', segmentation_map)
     # cv2.imshow('out', out*255)
+    print("FPS: ", 1.0 / (time.time() - start_time)) # FPS = 1 / time to process loop
 
     if cv2.waitKey(1)& 0xFF == ord('s'):
         cv2.imwrite("s.jpg", frame2)
