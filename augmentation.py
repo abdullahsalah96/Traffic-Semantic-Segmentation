@@ -114,7 +114,7 @@ class Augmentation():
         # print("Saving Image" + out_path)
         cv2.imwrite(out_path, image)
 
-IMAGES_PATH = "/Users/abdallaelshikh/Desktop/MIA/Coral-Detection/LabeledDataset/Images"
-ANNOTATIONS_PATH = "/Users/abdallaelshikh/Desktop/MIA/Coral-Detection/LabeledDataset/Annotations"
-aug = Augmentation(IMAGES_PATH, "/Users/abdallaelshikh/Desktop/MIA/Coral-Detection/LabeledDataset/Augmented_Images", ANNOTATIONS_PATH, "/Users/abdallaelshikh/Desktop/MIA/Coral-Detection/LabeledDataset/Augmented_Annotations", 3, True, True, True, True)
-aug.augment(50,50,120)
+IMAGES_PATH = "/Users/abdallaelshikh/Desktop/MIA/Coral/Coral-Detection/LabeledDataset/Images"
+ANNOTATIONS_PATH = "/Users/abdallaelshikh/Desktop/MIA/Coral/Coral-Detection/LabeledDataset/Annotations"
+aug = Augmentation(IMAGES_PATH, "/Users/abdallaelshikh/Desktop/MIA/Coral/Coral-Detection/LabeledDataset/Augmented_Images", ANNOTATIONS_PATH, "/Users/abdallaelshikh/Desktop/MIA/Coral-Detection/LabeledDataset/Augmented_Annotations", 3, True, True, True, True)
+aug.augment(50,20,120)

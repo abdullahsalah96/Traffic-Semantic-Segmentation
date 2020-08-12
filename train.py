@@ -59,10 +59,10 @@ def UNET(width, height, color_depth, num_of_classes):
 segmentation = Segmentation()
 
 #Loading train images
-train_images = segmentation.load_images(TRAIN_IMAGES_PATH,"*.png", GRAYSCALE, True, (WIDTH, HEIGHT),)
+train_images = segmentation.load_images(TRAIN_IMAGES_PATH,"*.png", GRAYSCALE, True, (WIDTH, HEIGHT))
 
 #Loading train  annotations
-train_annotations = segmentation.load_images(TRAIN_ANNOTATIONS_PATH,"*.png", True, False, (128, 128))
+train_annotations = segmentation.load_images(TRAIN_ANNOTATIONS_PATH,"*.png", True, False, (WIDTH, HEIGHT))
 
 #one hot encoding the annotations
 one_hot_encoded_train_annotations = segmentation.get_segmentation_annotations(train_annotations, NUM_OF_CLASSES)
@@ -89,6 +89,5 @@ unet_model.fit(
     validation_split=VALIDATION_SPLIT
     )
 
-unet_model.save(r"Semantic100.h5")
-# unet_model.save(r"Semantic" + str(EPOCHS) +".h5")
+unet_model.save(r"UNET20.h5")
 print("Saved model to disk")

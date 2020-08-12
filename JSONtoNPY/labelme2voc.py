@@ -72,7 +72,7 @@ def main():
             )
 
             data = json.load(f)
-            path = data['imagePath'].split('\\')
+            path = data['imagePath'].split('/')
             imgPath = path[-1]
             print(imgPath)
 #            img_file = osp.join(osp.dirname(label_file), data['imagePath'])

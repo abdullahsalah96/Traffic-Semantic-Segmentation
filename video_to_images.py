@@ -1,8 +1,8 @@
 import cv2
 import os
 import math
-INPUT_VIDEO = "/Users/abdallaelshikh/Desktop/MIA/Coral-Detection/Dataset/VID_20200130_171307.mp4"
-OUTPUT_PATH = "/Users/abdallaelshikh/Desktop/MIA/Coral-Detection/Dataset/Images"
+INPUT_VIDEO = "/Users/abdallaelshikh/Desktop/MIA/Coral-Detection/Dataset/IMG_6144.MOV"
+OUTPUT_PATH = "/Users/abdallaelshikh/Desktop/MIA/Coral-Detection/Dataset/pink images"
 os.makedirs(OUTPUT_PATH, exist_ok=True)
 SAVE_FPS_RATE = 0.75
 
